@@ -6,12 +6,14 @@ import DragonImage from '../../images/dragon.jpg';
 
 const Dragon = props => {
 
+
     const linkStyle = {
         textDecoration: 'none'
     }
 
     const formatDate = date => {
-        return date.split('T')[0];
+        const isoDate = new Date(date);
+        return `${isoDate.getDate()}/${isoDate.getMonth()+1}/${isoDate.getFullYear()}`;
     }
     
     return (
@@ -22,7 +24,7 @@ const Dragon = props => {
                         <img src={DragonImage} alt="Dragon"/>
                     </div>
                     <span className="dragon__dragon-name">{props.data.name}</span>
-                    <span className="dragon__dragon-data">{props.data.createdAt ? formatDate(props.data.createdAt) : '...'}</span>
+                    <span className="dragon__dragon-data">{props.data.createdAt ? formatDate(props.data.createdAt) : ''}</span>
                     <span className="dragon__dragon-tipo">{props.data.type}</span>
                 </div>
             </DragonCard>

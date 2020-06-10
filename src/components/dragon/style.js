@@ -50,22 +50,13 @@ export const DragonCard = styled.div`
 
     .dragon__dragon-name {
         font-size: 20px;
+        overflow: hidden;
+        font-weight: bolder;
+        color: ${colors.darkBlue};
     }
 
     .dragon__dragon-data {
         font-size: 10px;
         margin: 10px auto;
     }
-
-    .dragon__dragon-tipo {
-        /* position: relative;
-        top: 22px;
-        background-color: ${colors.lightBlue};
-        padding: 4px 0 6px 0;
-        color: ${colors.darkBlue};
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis; */
-    }
-
 `

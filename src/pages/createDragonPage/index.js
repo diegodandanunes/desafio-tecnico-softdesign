@@ -7,6 +7,7 @@ import { Input } from '../../components/input';
 import { CreateDragon } from './style';
 import endpoints from '../../common/endpoints';
 import Spinner from '../../components/spinner';
+import { BackButton } from '../../components/backButton';
 
 const CreateDragonPage = props => {
     const { handleSubmit, register, formState } = useForm({ mode: 'onChange' });
@@ -35,7 +36,8 @@ const CreateDragonPage = props => {
                             <Input 
                                 ref={
                                     register({
-                                        required: true
+                                        required: true,
+                                        maxLength: 20
                                     })
                                 }
                                 type="text" 
@@ -48,7 +50,8 @@ const CreateDragonPage = props => {
                             <Input 
                                 ref={
                                 register({
-                                    required: true
+                                    required: true,
+                                    maxLength: 20
                                 })
                                 }
                                 type="type" 
@@ -71,7 +74,7 @@ const CreateDragonPage = props => {
                             />
 
                             <button disabled={!formState.isValid} className="create__submit" type="submit">Criar</button>
-                            <span onClick={() => props.history.push('/dragons')} className="create__return">Voltar</span>
+                            <BackButton where="/dragons"/>
                         </form>
                     </CreateDragon>
             }

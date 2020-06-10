@@ -6,26 +6,35 @@ import Spinner from '../../components/spinner';
 import { ContainerDragons } from '../../common/containers';
 import Dragon from '../../components/dragon';
 import { Dragons } from './style';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
 const DragonsPage = props => {
 
-    const [dragons, setDragons] = useState([{id: '', type: '', history: '', name: ''}]);
+    const [dragons, setDragons] = useState([{id: '', type: '', name: ''}]);
     const [isLoading, setLoading] = useState(true);
+
+    const sortDragons = dragons => {
+        return dragons.sort((a, b) => a.name.localeCompare(b.name));
+    }
     
     useEffect(() => {  
         setLoading(true);
         axios.get(endpoints.DRAGONS_ENDPOINT)
             .then(response => {
                 setLoading(false);
-                setDragons(response.data);
+                setDragons(sortDragons(response.data));
             })
             .catch(err => console.log('Erro ao buscar dragões ', err))
     }, []);
 
     return (
         <Dragons>
-            <h1>Dragon List</h1> 
-            <p onClick={() => props.history.push('/create')}>Criar dragão</p>
+            <h1>Lista de dragões disponíveis</h1> 
+            <span className="dragons__create-dragon" onClick={() => props.history.push('/create')}> 
+                <FontAwesomeIcon icon={faPlus} />
+                Criar dragão
+            </span>
 
             <ContainerDragons>
                 { isLoading 

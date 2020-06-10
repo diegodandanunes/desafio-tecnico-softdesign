@@ -6,7 +6,6 @@ import { HeaderStyle } from './style';
 
 const Header = () => {
 
-
     return (
         <header>
             <ContainerFluid>
