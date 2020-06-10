@@ -19,6 +19,7 @@ export const DragonDetails = styled.div`
 
         @media(max-width: 540px) {
             display: block;
+            padding-left: 0px;
         }
     }
 
