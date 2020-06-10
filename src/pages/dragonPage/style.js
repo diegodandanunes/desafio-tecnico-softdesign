@@ -16,6 +16,10 @@ export const DragonDetails = styled.div`
         color: #fff;
         padding-left: 10px;
         font-style: italic;
+
+        @media(max-width: 540px) {
+            display: block;
+        }
     }
 
     a {

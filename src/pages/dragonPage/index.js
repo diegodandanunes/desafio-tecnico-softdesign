@@ -66,7 +66,7 @@ const DragonPage = props => {
                                 <span>
                                     <FontAwesomeIcon icon={faEdit} />  Para editar esse dragão, basta clicar em qualquer campo e editá-lo
                                 </span>
-                                <h6 contentEditable={true} suppressContentEditableWarning={true} id="dragonType">{dragon.type}</h6>
+                                <h3 contentEditable={true} suppressContentEditableWarning={true} id="dragonType">{dragon.type}</h3>
                                 <p contentEditable={true} suppressContentEditableWarning={true} id="dragonHistory">
                                     {dragon.history ? dragon.history : 'Nenhuma história para esse dragão por enquanto.'}
                                 </p>
